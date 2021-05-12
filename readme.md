@@ -102,9 +102,13 @@ Here is a sample output from a ping of Google 4 times:
 
 ## Expected output of your program
 
-**Server Output:** [See project doc for images]
+**Server Output:** 
 
-**Client Output :** [See project doc for images]
+![Server Output](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_server_output.jpg)
+
+**Client Output :** 
+
+![Client Output](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output.jpg)
 
 _(Values in sample below are smaller than your expected output)_
 
@@ -140,4 +144,6 @@ Footnotes:
 1. The estimated RTT, DevRTT, and Timeout intervals are actually only used with TCP. These calculations are included in this programming assignment to give you experience working with these parameters.
 2. **RTT Slides** :
 
-[See project doc for images]
+![Est. RTT](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_est_rtt.jpg)
+
+![Dev. RTT](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_dev_rtt.jpg)
