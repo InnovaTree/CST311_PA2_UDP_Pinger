@@ -50,6 +50,7 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 - Modify UDPClient to form a UDP connection with Server.py.
 - Confirm: UDPClient should send a message to Server.py. Server.py should capitalize the message and return it to UDPClient.
 - Modify UDPClient to send 10 messages on a loop to Server.py.
+- Implement timer (package) to record RTT.
 - Calculate (**MUST BE PERFORMED WITHOUT USING LIST OR ARRAY)**:
     - Round-trip time (RTT)
     - Minimum RTT
