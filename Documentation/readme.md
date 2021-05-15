@@ -62,7 +62,8 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
     - Packet Loss percentage
 - Modify Server.py and UDPClient so that they display print messages in the format shown in the spec sheet.
 - Solution must be tested to confirm that calculations results must match the resultchecker spreadsheet.
-- Get the program to run on Mininet
+- Get the program to run on Mininet:
+    - Interpreter needs to be changed to use Python 3.4. 
 
 **What do we submit? (ONE SUBMISSION PER TEAM)**
 
