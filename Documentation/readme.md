@@ -16,7 +16,7 @@ I will randomly assign roles.
 
 [Work Division](#work-division)
 
-#Team Lead
+# Team Lead
 Ian Rowe
 
 [Return to Top](#contents)
@@ -49,7 +49,6 @@ Ian Rowe
 - Confirm: UDPClient should send a message to Server.py. Server.py should capitalize the message and return it to UDPClient.
 - Modify UDPClient to send 10 messages on a loop to Server.py.
 - Calculate (**MUST BE PERFORMED WITHOUT USING LIST OR ARRAY)**:
-
     - Round-trip time (RTT)
     - Minimum RTT
     - Maximum RTT
@@ -58,19 +57,17 @@ Ian Rowe
     - Deviation RTT (equation in spec sheet)
     - Timeout Interval (equation in spec sheet)
     - Packet Loss percentage
-
 - Modify Server.py and UDPClient so that they display print messages in the format shown in the spec sheet.
 - Solution must be tested to confirm that calculations results must match the resultchecker spreadsheet.
 - Get the program to run on Mininet
 
-**What do we submit?**
+**What do we submit? (ONE SUBMISSION PER TEAM)**
 
 - Client and server code ( **follow the naming convention** )
 - Meeting minutes for all 3 meetings
 - Screenshots of server &amp; client output (**in one pdf file)**
 - &quot;Fill in columns B and C with RTTs and lost packets as indicated in the file - Output Checker. Your outputs in your screenshots must match the outputs calculated in the Output Checker.&quot;
-
-One submission per team
+- All members fill out the peer review form but **do not submit screenshots**.
 
 [Return to Top](#contents)
 
