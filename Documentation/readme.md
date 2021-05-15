@@ -16,8 +16,11 @@ I will randomly assign roles.
 
 [Work Division](#work-division)
 
-# Team Lead
-Ian Rowe
+# Team
+**LEAD: Ian Rowe**
+Member: Larry Chiem
+Member: Raymond Shum
+Member: Nicholas Stankovich
 
 [Return to Top](#contents)
 
