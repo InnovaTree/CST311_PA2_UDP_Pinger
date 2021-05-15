@@ -18,9 +18,8 @@ I will randomly assign roles.
 
 # Team
 **LEAD: Ian Rowe**
-Member: Larry Chiem
-Member: Raymond Shum
-Member: Nicholas Stankovich
+
+MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 
 [Return to Top](#contents)
 
