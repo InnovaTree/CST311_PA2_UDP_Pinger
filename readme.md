@@ -118,14 +118,14 @@ _(Values in sample below are smaller than your expected output)_
 2. **(5 points)** Ping messages must be sent using UDP. Server must change the received message to uppercase before sending the message back to the client.
 3. **(5 + 5 points)** Print the request from client and response from server messages on both the client and server machines.
 4. **(8 x 5 points)** Calculate and print the following on the client side in milliseconds:
-  1. Round trip time (RTT) - If the server doesn&#39;t respond, print &quot;Request timed out&quot;.
-  2. Minimum RTT
-  3. Maximum RTT
-  4. Average RTT (Leave out lost packets from average calculation)
-  5. Estimated RTT. Consider alpha = 0.125. (Look at slides at the end for formulae.)
-  6. Deviation RTT. Consider beta = 0.25. (Look at slides at the end for formulae.)
-  7. Timeout Interval (Look at slides at the end for formulae.)
-  8. Packet loss percentage
+    - Round trip time (RTT) - If the server doesn&#39;t respond, print &quot;Request timed out&quot;.
+    - Minimum RTT
+    - Maximum RTT
+    - Average RTT (Leave out lost packets from average calculation)
+    - Estimated RTT. Consider alpha = 0.125. (Look at slides at the end for formulae.)
+    - Deviation RTT. Consider beta = 0.25. (Look at slides at the end for formulae.)
+    - Timeout Interval (Look at slides at the end for formulae.)
+    - Packet loss percentage
 5. **(5 points)** You must write the client code to do the assignment with the calculations in 4 above without the use of a list (or array). Find an efficient and effective use of storage and program speed.
 6. **(5 points)** Programs must be well documented.
 7. **(5 points)** Submission files are in order. (Look at the &quot;What to hand in&quot; section.)
