@@ -12,13 +12,13 @@ I will randomly assign roles.</del>
 
 # Contents
 
-1. [Team Lead](#team-lead)
+1. [Team Lead](#team)
 2. [Project Rundown](#project-rundown)
 3. [Work Division](#work-division)
-    - [Larry Chiem]
-    - [Ian Rowe]
-    - [Raymond Shum]
-    - [Nicholas Stankovich]
+    - [Larry Chiem](#larry-chiem)
+    - [Ian Rowe](#ian-rowe)
+    - [Raymond Shum](#raymond-shum)
+    - [Nicholas Stankovich](#nicholas-stankovich)
 
 # Team
 **LEAD: Ian Rowe**
@@ -84,7 +84,7 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 ## Larry Chiem
 > 1. Modify UDPClient.py to measure RTT per loop.
 > 2. Modify UDPClient.py create if statement that checks for timeout if RTT exceeds timeout interval.
-> 3. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p1.jpg)
+> 3. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p1.JPG)
 
 [Return to Top](#contents)
 
@@ -99,7 +99,7 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 ## Raymond Shum
 > 1. Implement tracking for the following values:
 >     - Minimum, Maximum, Average RTT, Packet Loss Percentage
-> 2. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p2.jpg)
+> 2. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p2.JPG)
 > 3. Perform testing on Mininet using required test environment.
 > 4. Confirm results on Output Checker spreadsheet.
 
