@@ -4,6 +4,8 @@ Assets and class-provided requirements for this programming assigment are stored
 
 # Announcements
 
+All members, please use **Python 3** for this assignment.
+
 Meeting 2 (status check) will start on the weekend of **22-May** after the midterm. Good luck!
 
 <del>**All members complete this by Sun night, 5/16:**
