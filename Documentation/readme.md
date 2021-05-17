@@ -4,17 +4,21 @@ Assets and class-provided requirements for this programming assigment are stored
 
 # Announcements
 
-**All members complete this by Sun night, 5/16:**
+Meeting 2 (status check) will start on the weekend of **22-May** after the midterm. Good luck!
+
+<del>**All members complete this by Sun night, 5/16:**
 Post in slack about your preferred work role if any. If there is no preference,
-I will randomly assign roles.
+I will randomly assign roles.</del>
 
 # Contents
 
-[Team Lead](#team-lead)
-
-[Project Rundown](#project-rundown)
-
-[Work Division](#work-division)
+1. [Team Lead](#team-lead)
+2. [Project Rundown](#project-rundown)
+3. [Work Division](#work-division)
+    - [Larry Chiem]
+    - [Ian Rowe]
+    - [Raymond Shum]
+    - [Nicholas Stankovich]
 
 # Team
 **LEAD: Ian Rowe**
@@ -76,5 +80,36 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 [Return to Top](#contents)
 
 # Work Division
+
+## Larry Chiem
+> 1. Modify UDPClient.py to measure RTT per loop.
+> 2. Modify UDPClient.py create if statement that checks for timeout if RTT exceeds timeout interval.
+> 3. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p1.jpg)
+
+[Return to Top](#contents)
+
+## Ian Rowe
+
+> 1. Modify UDPClient.py from PA#1 to connect with server.py.
+> 2. Modify UDPClient.py to send 10 messages to server.py on a loop.
+> 3. Implement: [Server Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_server_output.jpg)
+
+[Return to Top](#contents)
+
+## Raymond Shum
+> 1. Implement tracking for the following values:
+>     - Minimum, Maximum, Average RTT, Packet Loss Percentage
+> 2. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p2.jpg)
+> 3. Perform testing on Mininet using required test environment.
+> 4. Confirm results on Output Checker spreadsheet.
+
+[Return to Top](#contents)
+
+## Nicholas Stankovich
+
+> Create functions for calculations:
+>  1. Estimated RTT
+>  2. Deviation RTT
+>  3. Timeout Interval
 
 [Return to Top](#contents)
