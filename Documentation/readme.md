@@ -83,7 +83,7 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 
 ## Larry Chiem
 > 1. Modify UDPClient.py to measure RTT per loop.
-> 2. Modify UDPClient.py create if statement that checks for timeout if RTT exceeds timeout interval.
+> 2. Modify UDPClient.py by creating if statement that checks for timeout if RTT exceeds timeout interval.
 > 3. Implement: this part of [Client Output.](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_client_output_p1.JPG)
 
 [Return to Top](#contents)
@@ -108,8 +108,8 @@ MEMBERS: Larry Chiem, Raymond Shum, Nicholas Stankovich
 ## Nicholas Stankovich
 
 > Create functions for calculations:
->  1. Estimated RTT
->  2. Deviation RTT
->  3. Timeout Interval
+>  1. [Estimated RTT](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_est_rtt.jpg)
+>  2. [Deviation RTT](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_dev_rtt.jpg)
+>  3. [Timeout Interval](https://github.com/InnovaTree/CST311_PA2_UDP_Pinger/blob/main/Documentation/Images/doc_dev_rtt.jpg)
 
 [Return to Top](#contents)
