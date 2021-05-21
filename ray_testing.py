@@ -11,7 +11,7 @@ import timeit
 serverName = "10.0.0.2"     # Sets name of server to hostname (DNS will provide IP of localhost)
 serverPort = 12000          # Sends to arbitrary port number of 1200 (to avoid well known hosts)
 
-# EMWA Calculations based on slides
+# Functions for EMWA Calculations based on slides
 def est_rtt(est_rtt, sample_rtt, alpha = 0.125):
     return (1 - alpha) * est_rtt + alpha * sample_rtt
 
@@ -20,6 +20,15 @@ def dev_rtt(dev_rtt, sample_rtt, est_rtt, beta = 0.25):
 
 def timeout_int(est_rtt,dev_rtt):
     return est_rtt + 4 * dev_rtt
+
+# Functions for print formatting
+def ms(seconds):
+    """
+    Conversion to milliseconds.
+    :param seconds: Default output from timeit.
+    :return: Float of milliseconds converted from seconds
+    """
+    return seconds * 1000
 
 #Set initial values to 0 for testing
 packets_lost = 0
@@ -72,12 +81,7 @@ for pingnum in range(1,11):
         print("Mesg rcvd: {0}".format(modifiedMessage.decode()))
         print("Start time: {0}".format(start_time))
         print("Return time: {0}".format(return_time))
-
-        # RTT (if/else for formatting). Number of tabs changes when ping_num > 9
-        if pingnum < 10:
-            print("Pong{0} RTT: {1}\n".format(pingnum,sample_rtt))
-        else:
-            print("Pong{0} RTT: {1}\n".format(pingnum,sample_rtt))
+        print("Pong{0} RTT: {1} ms\n".format(pingnum, ms(sample_rtt)))
 
     except timeout:
         print("No Mesg rcvd")
@@ -87,10 +91,10 @@ for pingnum in range(1,11):
         clientSocket.close()
 
 #Print statements below (end of run stats)
-print("\nMin RTT: {0}".format(min_rtt))
-print("Max Rtt: {0}".format(max_rtt))
-print("Avg RTT: {0}".format(total_rtt/(10-packets_lost)))
+print("\nMin RTT: {0} ms".format(ms(min_rtt)))
+print("Max Rtt: {0} ms".format(ms(max_rtt)))
+print("Avg RTT: {0} ms".format(ms(total_rtt/(10-packets_lost))))
 print("Packet Loss: {0}%".format((packets_lost/10) * 100))
-print("Estimated RTT: {0}".format(cur_est_rtt))
-print("Dev RTT: {0}".format(cur_dev_rtt))
-print("Timeout Interval:{0}".format(curr_time_out))
+print("Estimated RTT: {0} ms".format(ms(cur_est_rtt)))
+print("Dev RTT: {0} ms".format(ms(cur_dev_rtt)))
+print("Timeout Interval:{0} ms".format(ms(curr_time_out)))
