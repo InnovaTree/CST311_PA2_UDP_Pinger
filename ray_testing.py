@@ -1,5 +1,9 @@
 """
 This is the framework for UDPClient, adapted from Assignment 1.
+
+Note:
+    Have not converted times to milliseconds.
+    string.format() must be used instead of f-string literals for Python 3.5 (mininet)
 """
 
 from socket import *        # Used to create sockets.
