@@ -18,19 +18,19 @@ while True:
     # Receive the client packet along with the
     # address it is coming from
     message, address = serverSocket.recvfrom(1024)
-    modifiedMessage = message.upper()
+    modifiedMessage = message.decode().upper()
 
     print(f"PING {pingnum} Recieved")
-    print(f"Mesg rcvd: {message}")
+    print(f"Mesg rcvd: {message.decode()}")
 
     # If rand is less is than 4, and this not the
     # first "ping" of a group of 10, consider the
     # packet lost and do not respond
-    """ Commented for testing
+
     if rand < 4 and pingnum % 10 != 1:
         print("Packet was lost.\n")
         continue
-    """
+
     # Otherwise, the server responds
-    serverSocket.sendto(modifiedMessage, address)
+    serverSocket.sendto(modifiedMessage.encode(), address)
     print(f"Mesg sent: {modifiedMessage}\n")
