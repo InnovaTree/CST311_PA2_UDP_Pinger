@@ -26,9 +26,11 @@ while True:
     # If rand is less is than 4, and this not the
     # first "ping" of a group of 10, consider the
     # packet lost and do not respond
+    """ Commented for testing
     if rand < 4 and pingnum % 10 != 1:
         print("Packet was lost.\n")
         continue
+    """
     # Otherwise, the server responds
     serverSocket.sendto(modifiedMessage, address)
     print(f"Mesg sent: {modifiedMessage}\n")
