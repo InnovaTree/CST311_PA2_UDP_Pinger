@@ -8,7 +8,7 @@ from socket import *
 # Notice the use of SOCK_DGRAM for UDP packets
 serverSocket = socket(AF_INET, SOCK_DGRAM)
 # Assign IP address and port number to socket
-serverSocket.bind(('', 12000))
+serverSocket.bind(('127.0.0.1', 12000))
 pingnum = 0
 while True:
     # Count the pings received
@@ -18,10 +18,17 @@ while True:
     # Receive the client packet along with the
     # address it is coming from
     message, address = serverSocket.recvfrom(1024)
+    modifiedMessage = message.upper()
+
+    print(f"PING {pingnum} Recieved")
+    print(f"Mesg rcvd: {message}")
+
     # If rand is less is than 4, and this not the
     # first "ping" of a group of 10, consider the
     # packet lost and do not respond
     if rand < 4 and pingnum % 10 != 1:
+        print("Packet was lost.\n")
         continue
     # Otherwise, the server responds
-    serverSocket.sendto(message, address)
+    serverSocket.sendto(modifiedMessage, address)
+    print(f"Mesg sent: {modifiedMessage}\n")
