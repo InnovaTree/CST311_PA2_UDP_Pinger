@@ -7,6 +7,7 @@ import timeit
 serverName = "127.0.0.1"    # Sets name of server to hostname (DNS will provide IP of localhost)
 serverPort = 12000          # Sends to arbitrary port number of 1200 (to avoid well known hosts)
 
+# EMWA Calculations based on slides
 def est_rtt(est_rtt, sample_rtt, alpha = 0.125):
     return (1 - alpha) * est_rtt + alpha * sample_rtt
 
@@ -82,19 +83,12 @@ for pingnum in range(1,11):
         clientSocket.close()
 
 #Print statements below (end of run stats)
-# Min RTT
 print(f"\nMin RTT:  \t\t{min_rtt}")
-# Max RTT
 print(f"Max Rtt:  \t\t{max_rtt}")
-# Avg RTT
 print(f"Avg RTT:  \t\t{total_rtt/(10-packets_lost)}")
-# Packet Loss %
 print(f"Packet Loss:  \t{(packets_lost/10) * 100}%")
-# Estimated RTT
 print(f"Estimated RTT: \t{cur_est_rtt}")
-# Dev RTT
 print(f"Dev RTT: \t\t{cur_dev_rtt}")
-# Timeout Interval
 print(f"Timeout Interval:{curr_time_out}")
 
 
