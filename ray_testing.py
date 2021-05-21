@@ -4,7 +4,7 @@ This is the framework for UDPClient, adapted from Assignment 1.
 
 from socket import *        # Used to create sockets.
 import timeit
-serverName = "127.0.0.1"    # Sets name of server to hostname (DNS will provide IP of localhost)
+serverName = "10.0.0.2"     # Sets name of server to hostname (DNS will provide IP of localhost)
 serverPort = 12000          # Sends to arbitrary port number of 1200 (to avoid well known hosts)
 
 # EMWA Calculations based on slides
@@ -31,14 +31,14 @@ for pingnum in range(1,11):
     try:
         clientSocket = socket(AF_INET, SOCK_DGRAM)
         clientSocket.settimeout(curr_time_out)
-        message = f"Ping{pingnum}"
+        message = "Ping{0}".format(pingnum)
 
         # Start timer & send msg to server
         start_time = timeit.default_timer()
         clientSocket.sendto(message.encode(),(serverName, serverPort))
 
         # Message sent (must be placed before timeout exception can occur)
-        print(f"Mesg sent: \t\t{message}")
+        print("Mesg sent: {0}".format(message))
 
         # Receive msg from server abd stop timer
         modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
@@ -65,30 +65,28 @@ for pingnum in range(1,11):
             max_rtt = sample_rtt
 
         # Print statements below (Per loop stats)
-        print(f"Mesg rcvd: \t\t{modifiedMessage.decode()}")
-        print(f"Start time: \t{start_time}")
-        print(f"Return time: \t{return_time}")
+        print("Mesg rcvd: {0}".format(modifiedMessage.decode()))
+        print("Start time: {0}".format(start_time))
+        print("Return time: {0}".format(return_time))
 
         # RTT (if/else for formatting). Number of tabs changes when ping_num > 9
         if pingnum < 10:
-            print(f"Pong{pingnum} RTT: \t\t{sample_rtt}\n")
+            print("Pong{0} RTT: {1}\n".format(pingnum,sample_rtt))
         else:
-            print(f"Pong{pingnum} RTT: \t{sample_rtt}\n")
+            print("Pong{0} RTT: {1}\n".format(pingnum,sample_rtt))
 
     except timeout:
         print("No Mesg rcvd")
-        print(f"PONG{pingnum} Request Timed out\n")
+        print("PONG{0} Request Timed out\n".format(pingnum))
         packets_lost += 1
     finally:
         clientSocket.close()
 
 #Print statements below (end of run stats)
-print(f"\nMin RTT:  \t\t{min_rtt}")
-print(f"Max Rtt:  \t\t{max_rtt}")
-print(f"Avg RTT:  \t\t{total_rtt/(10-packets_lost)}")
-print(f"Packet Loss:  \t{(packets_lost/10) * 100}%")
-print(f"Estimated RTT: \t{cur_est_rtt}")
-print(f"Dev RTT: \t\t{cur_dev_rtt}")
-print(f"Timeout Interval:{curr_time_out}")
-
-
+print("\nMin RTT: {0}".format(min_rtt))
+print("Max Rtt: {0}".format(max_rtt))
+print("Avg RTT: {0}".format(total_rtt/(10-packets_lost)))
+print("Packet Loss: {0}%".format((packets_lost/10) * 100))
+print("Estimated RTT: {0}".format(cur_est_rtt))
+print("Dev RTT: {0}".format(cur_dev_rtt))
+print("Timeout Interval:{0}".format(curr_time_out))
