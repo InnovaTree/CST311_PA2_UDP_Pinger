@@ -17,9 +17,9 @@ To be done:
 """
 
 from socket import *        # Used to create sockets.
-import timeit
-serverName = "10.0.0.2"     # Sets name of server to hostname (DNS will provide IP of localhost)
-serverPort = 12000          # Sends to arbitrary port number of 1200 (to avoid well known hosts)
+import timeit               # Package used generate time values for RTT calculations.
+serverName = "10.0.0.2"     # Sets the IP address of Node 2 as the server.
+serverPort = 12000          # Sends to port number of 1200 (Set in server.py)
 
 # Functions for EMWA Calculations based on slides
 def est_rtt(est_rtt, sample_rtt, alpha = 0.125):
@@ -96,8 +96,6 @@ for pingnum in range(1,11):
         cur_est_rtt = est_rtt(cur_est_rtt,sample_rtt)
         cur_dev_rtt = dev_rtt(cur_dev_rtt,sample_rtt,cur_est_rtt)
         curr_time_out = timeout_int(cur_est_rtt,cur_dev_rtt)
-
-
 
         # Print statements below (Per loop stats)
         print("Mesg rcvd: {0}".format(modifiedMessage.decode()))
