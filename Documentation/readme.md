@@ -4,9 +4,11 @@ Assets and class-provided requirements for this programming assigment are stored
 
 # Announcements
 
-All members, please use **Python 3** for this assignment.
+All members, please use **Python 3** for this assignment. Mininet supports up to Python 3.5.
 
-Meeting 2 (status check) will start on the weekend of **22-May** after the midterm. Good luck!
+Meeting 2 has begun: from Sat 5/22 to Sun 5/23 evening.
+
+<del>Meeting 2 (status check) will start on the weekend of **22-May** after the midterm. Good luck!</del>
 
 <del>**All members complete this by Sun night, 5/16:**
 Post in slack about your preferred work role if any. If there is no preference,
