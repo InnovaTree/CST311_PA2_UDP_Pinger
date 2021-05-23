@@ -1,3 +1,12 @@
+"""
+Note:
+    This was the provided code for this assignment.
+    It has already been modified to provide the correct output.
+    
+    No work needs to be done with this. Client is required to run
+        with this code as-is.
+"""
+
 # Server.py
 # We will need the following module to generate
 # randomized lost packets
