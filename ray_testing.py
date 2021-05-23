@@ -4,16 +4,14 @@ This is the framework for UDPClient, adapted from Assignment 1.
 Note:
     This is confirmed working and has been tested on Mininet.
     string.format() must be used instead of f-string literals for Python 3.5 (mininet)
+    
+    Confirmed with Dr. Satyavolu during office hours:
+        clientSocket timeout interval is set to 1 second initially.
+        Timeout interval remains 1 second for the duration of the test.
 
 To be done:
     Clean up variable initializations (optional).
-    
-    Confirm with Dr. Satyavolu or Millan: 
-    
-        Should initial time out be set to 1 second or 1 minute?
-        
-        Are we updating the actual timeout value of the socket with the calculated time
-        out per loop or does it remain at 1 sec/min?
+    Move timeout interval calculation outside of the main loop.
 """
 
 from socket import *        # Used to create sockets.
