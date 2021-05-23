@@ -1,0 +1,40 @@
+PING 1 Recieved
+Mesg rcvd: Ping1
+Mesg sent: PING1
+
+PING 2 Recieved
+Mesg rcvd: Ping2
+Mesg sent: PING2
+
+PING 3 Recieved
+Mesg rcvd: Ping3
+Packet was lost.
+
+PING 4 Recieved
+Mesg rcvd: Ping4
+Mesg sent: PING4
+
+PING 5 Recieved
+Mesg rcvd: Ping5
+Packet was lost.
+
+PING 6 Recieved
+Mesg rcvd: Ping6
+Packet was lost.
+
+PING 7 Recieved
+Mesg rcvd: Ping7
+Mesg sent: PING7
+
+PING 8 Recieved
+Mesg rcvd: Ping8
+Mesg sent: PING8
+
+PING 9 Recieved
+Mesg rcvd: Ping9
+Mesg sent: PING9
+
+PING 10 Recieved
+Mesg rcvd: Ping10
+Packet was lost.
+
