@@ -11,7 +11,6 @@ Note:
 
 To be done:
     Clean up variable initializations (optional).
-    Move timeout interval calculation outside of the main loop.
 """
 
 from socket import *        # Used to create sockets.
@@ -44,7 +43,7 @@ sample_rtt = 0              # Measured RTT for current ping
 total_rtt = 0               # Sum of all sample_rtt in the run
 cur_est_rtt = 0             # Currently calculated est_rtt
 cur_dev_rtt = 0             # Currently calculated dev_rtt
-curr_time_out = 1           # Time out interval value, set to 1 second intially
+curr_time_out = 1           # Time out interval value, set to 1 second
 min_rtt = max_rtt = 0       # Min and Max recorded rtt values in the run
 
 # Loop will run 10 times, starting at 1 and ending at 10
@@ -93,7 +92,6 @@ for pingnum in range(1,11):
         # to generate the new values.
         cur_est_rtt = est_rtt(cur_est_rtt,sample_rtt)
         cur_dev_rtt = dev_rtt(cur_dev_rtt,sample_rtt,cur_est_rtt)
-        curr_time_out = timeout_int(cur_est_rtt,cur_dev_rtt)
 
         # Print statements below (Per loop stats)
         print("Mesg rcvd: {0}".format(modifiedMessage.decode()))
@@ -110,6 +108,9 @@ for pingnum in range(1,11):
     finally:
         # clientSocket is closed at end of loop whether or not timeout occurs.
         clientSocket.close()
+
+# Timeout interval calculation: Calculated with final est_rtt and dev_rtt values
+curr_time_out = timeout_int(cur_est_rtt,cur_dev_rtt)
 
 #Print statements below (end of run stats):
 print("\nMin RTT: \t{0} ms".format(ms(min_rtt)))
