@@ -78,7 +78,6 @@ for pingnum in range(1,fullCount+1):
         # Calculate sample RTT of current loop and add value to total RTT
         sample_rtt = return_time - start_time
         total_rtt += sample_rtt
-        print(total_rtt)
 
         # Set new min/max RTT if new sample RTT is lower or higher than the currently recorded values
         if min_rtt == 0 or sample_rtt < min_rtt:
