@@ -2,6 +2,8 @@
 This is the framework for UDPClient, adapted from Assignment 1.
 
 Note:
+    Output values confirmed correct using output checker. This script can be submitted.
+    
     This is confirmed working and has been tested on Mininet.
     string.format() must be used instead of f-string literals for Python 3.5 (mininet)
     
