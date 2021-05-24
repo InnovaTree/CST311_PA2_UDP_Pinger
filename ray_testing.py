@@ -3,7 +3,7 @@ This is the framework for UDPClient, adapted from Assignment 1.
 
 Note:
     Output values confirmed correct using output checker. This script can be submitted.
-    
+
     This is confirmed working and has been tested on Mininet.
     string.format() must be used instead of f-string literals for Python 3.5 (mininet)
     
@@ -30,7 +30,7 @@ def dev_rtt(dev_rtt, sample_rtt, est_rtt, beta = 0.25):
 def timeout_int(est_rtt,dev_rtt):
     return est_rtt + 4 * dev_rtt
 
-# Functions for print formatting
+# Functions for print formatting:
 def ms(seconds):
     """
     Conversion to milliseconds.
@@ -40,7 +40,8 @@ def ms(seconds):
     return seconds * 1000
 
 # Variables are initialized below:
-packets_lost = 0            # Number of time outs in the entire run
+lossCount = 0               # Number of time outs in the entire run
+fullCount = 10              # Total number of loop iterations
 sample_rtt = 0              # Measured RTT for current ping
 total_rtt = 0               # Sum of all sample_rtt in the run
 cur_est_rtt = 0             # Currently calculated est_rtt
@@ -48,8 +49,9 @@ cur_dev_rtt = 0             # Currently calculated dev_rtt
 curr_time_out = 1           # Time out interval value, set to 1 second
 min_rtt = max_rtt = 0       # Min and Max recorded rtt values in the run
 
+
 # Loop will run 10 times, starting at 1 and ending at 10
-for pingnum in range(1,11):
+for pingnum in range(1,fullCount+1):
 
     # Program executes until a timeout exception is thrown.
     # Exception thrown if clientSocket exceeds timeout interval value.
@@ -76,7 +78,7 @@ for pingnum in range(1,11):
         # Calculate sample RTT of current loop and add value to total RTT
         sample_rtt = return_time - start_time
         total_rtt += sample_rtt
-        
+
         # Set new min/max RTT if new sample RTT is lower or higher than the currently recorded values
         if min_rtt == 0 or sample_rtt < min_rtt:
             min_rtt = sample_rtt
@@ -111,19 +113,22 @@ for pingnum in range(1,11):
         # of the current timeout interval.
         print("No Mesg rcvd")
         print("PONG{0} Request Timed out\n".format(pingnum))
-        packets_lost += 1
+        lossCount += 1
+
     finally:
         # clientSocket is closed at end of loop whether or not timeout occurs.
         clientSocket.close()
 
-# Timeout interval calculation: Calculated with final est_rtt and dev_rtt values
+# End of run calculations performed below:
 curr_time_out = timeout_int(cur_est_rtt,cur_dev_rtt)
+avgRTT = total_rtt / (fullCount - lossCount)
+lossPercent = ((lossCount / fullCount) * 100)
 
 #Print statements below (end of run stats):
 print("\nMin RTT: \t{0} ms".format(ms(min_rtt)))
 print("Max Rtt: \t{0} ms".format(ms(max_rtt)))
-print("Avg RTT: \t{0} ms".format(ms(total_rtt/(10-packets_lost))))
-print("Packet Loss: \t{0}%".format((packets_lost/10) * 100))
+print("Avg RTT: \t{0} ms".format(ms(avgRTT)))
+print("Packet Loss: \t{0}%".format(lossPercent))
 print("Estimated RTT: \t{0} ms".format(ms(cur_est_rtt)))
 print("Dev RTT: \t{0} ms".format(ms(cur_dev_rtt)))
 print("Timeout Interval:{0} ms".format(ms(curr_time_out)))
