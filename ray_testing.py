@@ -127,7 +127,7 @@ for pingnum in range(1, fullCount + 1):
 # End of run calculations performed below:
 curr_time_out = timeout_int(cur_est_rtt, cur_dev_rtt)
 avgRTT = total_rtt / (fullCount - lossCount)
-lossPercent = (lossCount / fullCount) * 100
+lossPercent = ((lossCount / fullCount) * 100)
 
 # Print statements below (end of run stats):
 print("\nMin RTT: \t{0} ms".format(ms(min_rtt)))
