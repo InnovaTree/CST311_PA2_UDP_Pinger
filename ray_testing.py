@@ -1,24 +1,19 @@
 """
-This is the framework for UDPClient, adapted from Assignment 1.
-
-Note:
-    Output values confirmed correct using output checker. This script can be submitted.
-
-    This is confirmed working and has been tested on Mininet.
-    string.format() must be used instead of f-string literals for Python 3.5 (mininet)
-    
-    Confirmed with Dr. Satyavolu during office hours:
-        clientSocket timeout interval is set to 1 second initially.
-        Timeout interval remains 1 second for the duration of the test.
-
-To be done:
-    Clean up variable initializations (optional).
+NAMES: Larry Chiem, Ian Rowe, Raymond Shum, Nicholas Stankovich
+DUE DATE: May 25, 2021
+ASSIGNMENT: Team Programming Assignment #2
+DESCRIPTION: This script was written for PYTHON 3 and meant to run on the MININET SERVER (not a topology). This script
+sends 10 pings to server.py, running on Port 1200 of the local machine (127.0.0.1). It measures the round trip time
+of the messages by calculating the difference between the time that a message is sent and the time that the response
+is received. It tracks and calculates several values required by the assignment specs, including estimated RTT,
+deviation, (min, max, sample and average) RTT, and timeout interval. Calculations and tracking are performed WITHOUT
+using a list. Per-loop and post-run results are displayed on the terminal window.
 """
 
 from socket import *  # Used to create sockets.
 import timeit  # Package used generate time values for RTT calculations.
 
-serverName = "127.0.0.1"  # Sets the IP address of Mininet Client as the server.
+serverName = "127.0.0.1"  # Address is set to the loopback address of the Mininet server (set in server.py)
 serverPort = 12000  # Sends to port number of 1200 (Set in server.py)
 
 # Functions for EMWA Calculations based on slides
@@ -80,18 +75,18 @@ for pingnum in range(1, fullCount + 1):
         modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
         return_time = timeit.default_timer()
 
-        # Calculate sample RTT of current loop and add value to total RTT
+        # Calculate sample RTT of current loop and adds value to total RTT
         sample_rtt = return_time - start_time
         total_rtt += sample_rtt
 
         # Set new min/max RTT if new sample RTT is lower or higher than the currently recorded values
+        # or if this is the first loop (min/max rtt is initialized to 0)
         if min_rtt == 0 or sample_rtt < min_rtt:
             min_rtt = sample_rtt
         if max_rtt == 0 or sample_rtt > max_rtt:
             max_rtt = sample_rtt
 
-        # Set initial values of est_rtt and dev_rtt after first successful RTT measurement
-        # This is only to set the initial values for calculations in the first loop.
+        # Set initial values of est_rtt and dev_rtt after first successful RTT measurement (first loop only)
         if cur_est_rtt == 0:
             cur_est_rtt = sample_rtt
             cur_dev_rtt = sample_rtt / 2
