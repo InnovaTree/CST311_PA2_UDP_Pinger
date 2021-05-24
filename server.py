@@ -17,7 +17,7 @@ from socket import *
 # Notice the use of SOCK_DGRAM for UDP packets
 serverSocket = socket(AF_INET, SOCK_DGRAM)
 # Assign IP address and port number to socket
-serverSocket.bind(('10.0.0.2', 12000))
+serverSocket.bind(("127.0.0.1", 12000))
 pingnum = 0
 while True:
     # Count the pings received
@@ -29,7 +29,7 @@ while True:
     message, address = serverSocket.recvfrom(1024)
     modifiedMessage = message.decode().upper()
 
-    print('PING {0} Recieved'.format(pingnum))
+    print("PING {0} Recieved".format(pingnum))
     print("Mesg rcvd: {0}".format(message.decode()))
 
     # If rand is less is than 4, and this not the
