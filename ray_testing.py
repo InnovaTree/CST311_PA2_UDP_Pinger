@@ -86,12 +86,12 @@ for pingnum in range(1,11):
         if cur_est_rtt == 0:
             cur_est_rtt = sample_rtt
             cur_dev_rtt = sample_rtt / 2
-
-        # Perform EWMA Timeout Interval calculations, updating current values.
-        # The current dev/est rtt is passed into the functions along with the current sample rtt
-        # to generate the new values.
-        cur_est_rtt = est_rtt(cur_est_rtt,sample_rtt)
-        cur_dev_rtt = dev_rtt(cur_dev_rtt,sample_rtt,cur_est_rtt)
+        else:
+            # Perform EWMA Timeout Interval calculations, updating current values.
+            # The current dev/est rtt is passed into the functions along with the current sample rtt
+            # to generate the new values.
+            cur_est_rtt = est_rtt(cur_est_rtt,sample_rtt)
+            cur_dev_rtt = dev_rtt(cur_dev_rtt,sample_rtt,cur_est_rtt)
 
         # Print statements below (Per loop stats)
         print("Mesg rcvd: {0}".format(modifiedMessage.decode()))
