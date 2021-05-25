@@ -7,8 +7,8 @@ sends 10 pings to server.py, which is listening for UDP datagrams on Port 1200 o
 measures the round trip time of the messages by calculating the difference between the time that a message is sent 
 and the time that the response is received. It tracks and calculates several values required by the assignment specs, 
 including estimated RTT, deviation, (min, max, sample and average) RTT, packet loss percentage and timeout interval. 
-Calculations and tracking are performed WITHOUT using a list. Per-loop and post-run results are displayed on the terminal 
-window.
+Calculations and tracking are performed WITHOUT using a list. Per-loop and post-run results are displayed on the
+terminal window.
 """
 
 from socket import *  # Used to create sockets.
@@ -118,7 +118,7 @@ for pingnum in range(1, fullCount + 1):
 # End of run calculations performed below:
 curr_time_out = timeout_int(cur_est_rtt, cur_dev_rtt)
 avgRTT = total_rtt / (fullCount - lossCount)
-lossPercent = ((lossCount / fullCount) * 100)
+lossPercent = ((lossCount / float(fullCount)) * 100)
 
 # Print statements below (end of run stats):
 print("\nMin RTT: \t{0} ms".format(ms(min_rtt)))
