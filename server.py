@@ -1,10 +1,12 @@
 """
-Note:
-    This was the provided code for this assignment.
-    It has already been modified to provide the correct output.
-    
-    No work needs to be done with this. Client is required to run
-        with this code as-is.
+NAMES: Larry Chiem, Ian Rowe, Raymond Shum, Nicholas Stankovich
+DUE DATE: May 25, 2021
+ASSIGNMENT: Team Programming Assignment #2
+DESCRIPTION: This is the provided server.py script. It was modified to generate the print statements in the example
+output section of the spec sheet. It listens on port 12000 of the local machine (Mininet Server) for UDP messages,
+capitalizes received messages and replies to the client with the modified message. It "drops" packets by choosing
+not to respond to messages chosen through the value of a randomly generated number within the interval of 0 to 10. It
+displays output to the terminal window.
 """
 
 # Server.py
