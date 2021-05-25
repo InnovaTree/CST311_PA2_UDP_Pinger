@@ -104,11 +104,6 @@ for pingnum in range(1, fullCount + 1):
         print("Return time: {0}".format(return_time))
         print("Pong{0} RTT: {1} ms\n".format(pingnum, ms(sample_rtt)))
 
-        # Debug
-        print("\nLoop {0}".format(pingnum))
-        print("Estimated RTT: {0}".format(cur_est_rtt))
-        print("Dev RTT: {0}\n".format(cur_dev_rtt))
-
     except timeout:
         # timeout occurs if message is not received from server within the duration
         # of the current timeout interval.
