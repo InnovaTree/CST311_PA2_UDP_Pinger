@@ -3,11 +3,12 @@ NAMES: Larry Chiem, Ian Rowe, Raymond Shum, Nicholas Stankovich
 DUE DATE: May 25, 2021
 ASSIGNMENT: Team Programming Assignment #2
 DESCRIPTION: This script was written for PYTHON 3 and meant to run on the MININET SERVER (not a topology). This script
-sends 10 pings to server.py, running on Port 1200 of the local machine (127.0.0.1). It measures the round trip time
-of the messages by calculating the difference between the time that a message is sent and the time that the response
-is received. It tracks and calculates several values required by the assignment specs, including estimated RTT,
-deviation, (min, max, sample and average) RTT, and timeout interval. Calculations and tracking are performed WITHOUT
-using a list. Per-loop and post-run results are displayed on the terminal window.
+sends 10 pings to server.py, which is listening for UDP datagrams on Port 1200 of the local machine (127.0.0.1). It 
+measures the round trip time of the messages by calculating the difference between the time that a message is sent 
+and the time that the response is received. It tracks and calculates several values required by the assignment specs, 
+including estimated RTT, deviation, (min, max, sample and average) RTT, packet loss percentage and timeout interval. 
+Calculations and tracking are performed WITHOUT using a list. Per-loop and post-run results are displayed on the terminal 
+window.
 """
 
 from socket import *  # Used to create sockets.
